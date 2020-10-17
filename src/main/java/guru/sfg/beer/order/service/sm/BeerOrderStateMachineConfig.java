@@ -39,7 +39,6 @@ public class BeerOrderStateMachineConfig extends StateMachineConfigurerAdapter<B
                     .source(BeerOrderStatusEnum.NEW).target(BeerOrderStatusEnum.VALIDATION_PENDING)
                     .event(BeerOrderEventEnum.VALIDATE_ORDER)
                     .action(validateOrderAction)
-                    //todo add validation action here
                 .and().withExternal()
                     .source(BeerOrderStatusEnum.NEW).target(BeerOrderStatusEnum.VALIDATED)
                     .event(BeerOrderEventEnum.VALIDATION_PASSED)
